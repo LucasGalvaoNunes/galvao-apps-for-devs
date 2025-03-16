@@ -16,3 +16,4 @@ services:
       - ${APP_DATA_DIR}/workspace:/home/coder/workspace
     environment:
       PASSWORD: $APP_PASSWORD
+    privileged: true
