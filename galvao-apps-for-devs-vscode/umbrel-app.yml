@@ -2,7 +2,7 @@ manifestVersion: 1
 id: galvao-apps-for-devs-vscode
 name: VS Code
 tagline: VS Code with your umbrel files and docker
-icon: https://svgur.com/i/mvA.svg
+icon: https://www.svgrepo.com/show/374171/vscode.svg
 category: Development
 version: "1.0.0"
 port: 5001
