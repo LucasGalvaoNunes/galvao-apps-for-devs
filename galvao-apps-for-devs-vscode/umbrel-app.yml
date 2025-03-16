@@ -18,9 +18,9 @@ description: >-
 developer: Coder
 website: https://coder.com
 submitter: lucasgnunes
-submission: https://github.com/LucasGalvaoNunes/umbrel-vscode/galvao-apps-for-devs-vscode
-repo: https://github.com/LucasGalvaoNunes/umbrel-vscode/galvao-apps-for-devs-vscode
-support: https://github.com/LucasGalvaoNunes/umbrel-vscode/galvao-apps-for-devs-vscode/issues
+submission: https://github.com/LucasGalvaoNunes/galvao-apps-for-devs/galvao-apps-for-devs-vscode
+repo: https://github.com/LucasGalvaoNunes/galvao-apps-for-devs/galvao-apps-for-devs-vscode
+support: https://github.com/LucasGalvaoNunes/galvao-apps-for-devs/galvao-apps-for-devs-vscode/issues
 gallery:
   - https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png
   - https://github.com/coder/code-server/raw/main/docs/assets/screenshot-2.png
