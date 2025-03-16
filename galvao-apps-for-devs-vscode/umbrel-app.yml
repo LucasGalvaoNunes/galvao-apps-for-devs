@@ -1,0 +1,32 @@
+manifestVersion: 1
+id: galvao-apps-for-devs-vscode
+name: VS Code
+tagline: VS Code with your umbrel files and docker
+icon: https://svgur.com/i/mvA.svg
+category: Development
+version: "1.0.0"
+port: 5001
+description: >-
+  Run VS Code on your Umbrel and access it in the browser so you can
+  code on any device with a consistent development environment. This way you can
+  use your Umbrel not only to code from any device, anywhere, but to also speed
+  up tests, compilations, downloads, and more.
+
+
+  By running all intensive tasks run on your Umbrel, preserve battery life of your devices when you're on the go.
+
+developer: Coder
+website: https://coder.com
+submitter: lucasgnunes
+submission: https://github.com/LucasGalvaoNunes/umbrel-vscode/galvao-apps-for-devs-vscode
+repo: https://github.com/LucasGalvaoNunes/umbrel-vscode/galvao-apps-for-devs-vscode
+support: https://github.com/LucasGalvaoNunes/umbrel-vscode/galvao-apps-for-devs-vscode/issues
+gallery:
+  - https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png
+  - https://github.com/coder/code-server/raw/main/docs/assets/screenshot-2.png
+releaseNotes: >-
+  1.0.0: Initial release
+dependencies: []
+path: ""
+defaultUsername: ""
+deterministicPassword: true
