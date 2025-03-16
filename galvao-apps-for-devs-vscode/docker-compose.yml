@@ -17,4 +17,4 @@ services:
     environment:
       PASSWORD: $APP_PASSWORD
     privileged: true
-    comand: /bin/bash -c "sudo apt-get update && sudo apt-get install -y docker.io && sudo usermod -aG docker coder"
+    command: /bin/bash -c "sudo apt-get update && sudo apt-get install -y docker.io && sudo usermod -aG docker coder"
