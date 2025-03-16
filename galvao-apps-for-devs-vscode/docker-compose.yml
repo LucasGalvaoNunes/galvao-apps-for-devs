@@ -15,4 +15,5 @@ services:
       - ${APP_DATA_DIR}/data:/home/coder
       - ${APP_DATA_DIR}/workspace:/home/coder/workspace
     environment:
-      PASSWORD: $APP_PASSWORD
+      - PASSWORD: $APP_PASSWORD
+      - DOCKER_HOST=unix:///var/run/docker.sock
