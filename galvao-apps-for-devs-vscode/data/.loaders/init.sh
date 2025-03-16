@@ -30,6 +30,19 @@ setup_rust() {
   source "${HOME}/.cargo/env"
 }
 
+setup_php() {
+  sudo apt-get update
+
+  # Instalar o PHP e módulos mais comuns
+  sudo apt-get install -y php php-cli php-common php-mbstring php-xml php-curl php-mysql php-zip php-bcmath php-intl php-soap php-xmlrpc php-gd php-opcache php-readline php-dev php-pear php-pgsql php-redis php-imagick php-sqlite3 php-xdebug
+
+  # Configurar Xdebug (opcional para debugging)
+  sudo bash -c 'echo "zend_extension=$(find /usr/lib/php -name xdebug.so)" > /etc/php/*/cli/conf.d/20-xdebug.ini'
+  
+  # Verificar a instalação
+  php -m
+}
+
 alias node="lazy_load node setup_node"
 alias npm="lazy_load npm setup_node"
 alias python3="lazy_load python3 setup_python"
@@ -39,3 +52,4 @@ alias pip="pip3"
 alias rustup="lazy_load rustup setup_rust"
 alias rustc="lazy_load rustc setup_rust"
 alias cargo="lazy_load cargo setup_rust"
+alias php="lazy_load php setup_php"
