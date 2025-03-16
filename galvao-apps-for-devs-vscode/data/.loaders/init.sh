@@ -43,6 +43,15 @@ setup_php() {
   php -m
 }
 
+setup_docker_cli() {
+  apt-get update
+  apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+  curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+  add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+  apt-get update
+  apt-get install -y docker-ce-cli
+}
+
 alias node="lazy_load node setup_node"
 alias npm="lazy_load npm setup_node"
 alias python3="lazy_load python3 setup_python"
@@ -53,3 +62,4 @@ alias rustup="lazy_load rustup setup_rust"
 alias rustc="lazy_load rustc setup_rust"
 alias cargo="lazy_load cargo setup_rust"
 alias php="lazy_load php setup_php"
+alias docker="lazy_load docker setup_docker_cli"
