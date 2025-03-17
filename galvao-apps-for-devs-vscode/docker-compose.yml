@@ -9,7 +9,7 @@ services:
   server:
     image: codercom/code-server:latest
     restart: on-failure
-    user: "1000:1000"
+    user: "0:0"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${APP_DATA_DIR}/data:/home/coder

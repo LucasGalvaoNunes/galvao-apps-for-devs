@@ -43,6 +43,10 @@ setup_php() {
   php -m
 }
 
+setup_docker() {
+  sudo apt-get update
+  sudo apt-get install -y docker.io
+}
 
 alias node="lazy_load node setup_node"
 alias npm="lazy_load npm setup_node"
