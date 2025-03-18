@@ -2,7 +2,7 @@ manifestVersion: 1
 id: galvao-apps-for-devs-vscode
 name: VS Code
 tagline: VS Code with your umbrel files and docker
-icon: https://www.svgrepo.com/show/374171/vscode.svg
+icon: https://getumbrel.github.io/umbrel-apps-gallery/code-server/icon.svg
 category: Development
 version: "1.0.0"
 port: 5001
@@ -22,11 +22,13 @@ submission: https://github.com/LucasGalvaoNunes/galvao-apps-for-devs/galvao-apps
 repo: https://github.com/LucasGalvaoNunes/galvao-apps-for-devs/galvao-apps-for-devs-vscode
 support: https://github.com/LucasGalvaoNunes/galvao-apps-for-devs/galvao-apps-for-devs-vscode/issues
 gallery:
-  - https://github.com/coder/code-server/raw/main/docs/assets/screenshot-1.png
-  - https://github.com/coder/code-server/raw/main/docs/assets/screenshot-2.png
+  - https://getumbrel.github.io/umbrel-apps-gallery/code-server/1.jpg
+  - https://getumbrel.github.io/umbrel-apps-gallery/code-server/2.jpg
+  - https://getumbrel.github.io/umbrel-apps-gallery/code-server/3.jpg
 releaseNotes: >-
   1.0.0: Initial release
-dependencies: []
+dependencies:
+  - galvao-apps-for-devs-portainer
 path: ""
 defaultUsername: ""
 deterministicPassword: true
