@@ -1,10 +1,11 @@
 manifestVersion: 1
 id: galvao-apps-for-devs-portainer
-category: developer
 name: Portainer
-icon: https://getumbrel.github.io/umbrel-apps-gallery/portainer/icon.svg
-version: "1.0.0"
 tagline: Run custom Docker containers on your Umbrel
+icon: https://getumbrel.github.io/umbrel-apps-gallery/portainer/icon.svg
+category: developer
+version: "1.0.0"
+port: 9000
 description: >-
   ⚠️ Make sure to only use named Docker volumes for your stacks and containers. Data in bind-mounted volumes
   will be lost when the Portainer app is restarted or updated.
@@ -39,20 +40,20 @@ description: >-
 
   4. Web access to containers: Access your custom containers in your browser at umbrel.local:PORT_NUMBER. For example, for a container
   with a web UI running on port 4545, navigate to umbrel.local:4545 to access it.
+developer: Portainer
 website: https://portainer.io
-dependencies: []
+submitter: Lucas Galvão
+submission: https://github.com/LucasGalvaoNunes/galvao-apps-for-devs/galvao-apps-for-devs-vscode
 repo: https://github.com/portainer/portainer
 support: https://github.com/portainer/portainer/issues
-port: 9000
 gallery:
   - https://getumbrel.github.io/umbrel-apps-gallery/portainer/1.jpg
   - https://getumbrel.github.io/umbrel-apps-gallery/portainer/2.jpg
   - https://getumbrel.github.io/umbrel-apps-gallery/portainer/3.jpg
+releaseNotes: >-
+  1.0.0: Initial release
+dependencies: []
 path: ""
 defaultUsername: "admin"
 defaultPassword: "changeme"
-releaseNotes: >-
-  1.0.0: Initial release
-developer: Portainer
-submitter: Lucas Galvão
-submission: https://github.com/LucasGalvaoNunes/galvao-apps-for-devs/galvao-apps-for-devs-vscode
+
