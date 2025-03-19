@@ -11,7 +11,7 @@ services:
     restart: on-failure
     user: "1000:1000"
     volumes:
-      - /home/umbrel/umbrel/app-data/portainer/data/docker/docker.sock:/var/run/docker.sock
+      - /home/umbrel/umbrel/app-data/galvao-apps-for-devs-portainer/data/docker/docker.sock:/var/run/docker.sock
       - ${APP_DATA_DIR}/data:/home/coder
       - ${APP_DATA_DIR}/workspace:/home/coder/workspace
     environment:

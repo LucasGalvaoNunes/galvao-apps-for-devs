@@ -28,7 +28,7 @@ gallery:
 releaseNotes: >-
   1.0.0: Initial release
 dependencies:
-  - portainer
+  - galvao-apps-for-devs-portainer
 path: ""
 defaultUsername: ""
 deterministicPassword: true
