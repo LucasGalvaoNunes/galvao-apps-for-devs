@@ -25,7 +25,6 @@ services:
     volumes:
       - ${APP_DATA_DIR}/entrypoint-docker.sh:/entrypoint-docker.sh
       - ${APP_DATA_DIR}/data/docker:/data
-      - ${APP_DATA_DIR}/data/docker.sock:/var/run/docker.sock
 
   server:
     image: codercom/code-server:latest
@@ -33,7 +32,7 @@ services:
     user: "1000:1000"
     volumes:
       - ${APP_DATA_DIR}/data:/home/coder
-      - ${APP_DATA_DIR}/data/docker.sock:/var/run/docker.sock
+      - ${APP_DATA_DIR}/data/docker/docker.sock:/var/run/docker.sock
     environment:
       PASSWORD: $APP_PASSWORD
     privileged: true
