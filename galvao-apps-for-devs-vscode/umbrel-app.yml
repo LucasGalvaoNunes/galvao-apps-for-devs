@@ -27,8 +27,7 @@ gallery:
   - https://getumbrel.github.io/umbrel-apps-gallery/code-server/3.jpg
 releaseNotes: >-
   1.0.0: Initial release
-dependencies:
-  - galvao-apps-for-devs-portainer
+dependencies: []
 path: ""
 defaultUsername: ""
 deterministicPassword: true
