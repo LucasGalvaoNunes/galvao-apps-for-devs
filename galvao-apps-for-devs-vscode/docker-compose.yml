@@ -6,14 +6,34 @@ services:
       APP_HOST: galvao-apps-for-devs-vscode_server_1
       APP_PORT: 8080
 
+  docker:
+    image: docker:27.2.0-dind@sha256:f9f72ad901a78f27be922b2d320bbc263174f12919c1b37e6a01f828fa904565
+    privileged: true
+    network_mode: host
+    stop_grace_period: 1m
+    restart: on-failure
+    environment:
+      DOCKER_ENSURE_BRIDGE: "dind0:10.32.0.1/16"
+    entrypoint: /entrypoint-docker.sh
+    command: >
+      dockerd
+        --bridge dind0
+        --data-root /data/data
+        --exec-root /data/exec
+        --host unix:///data/docker.sock
+        --pidfile /data/docker.pid
+    volumes:
+      - ${APP_DATA_DIR}/entrypoint-docker.sh:/entrypoint-docker.sh
+      - ${APP_DATA_DIR}/data/docker:/data
+      - ${APP_DATA_DIR}/data/docker.sock:/var/run/docker.sock
+
   server:
     image: codercom/code-server:latest
     restart: on-failure
     user: "1000:1000"
     volumes:
-      - /home/umbrel/umbrel/app-data/galvao-apps-for-devs-portainer/data/docker/docker.sock:/var/run/docker.sock
       - ${APP_DATA_DIR}/data:/home/coder
-      - ${APP_DATA_DIR}/workspace:/home/coder/workspace
+      - ${APP_DATA_DIR}/data/docker.sock:/var/run/docker.sock
     environment:
       PASSWORD: $APP_PASSWORD
     privileged: true
