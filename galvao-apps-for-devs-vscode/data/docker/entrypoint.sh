@@ -44,10 +44,4 @@ then
     ensure_bridge_exists "${bridge}" "${ip_range}"
 fi
 
-# Instalar Docker Compose caso ainda não esteja instalado
-if ! command -v docker-compose &> /dev/null; then
-    echo "Docker Compose não está instalado. Instalando..."
-    apk add --no-cache docker-compose
-fi
-
 exec dockerd-entrypoint.sh $@
