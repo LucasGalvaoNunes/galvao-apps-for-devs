@@ -17,8 +17,10 @@ services:
         --bridge dind0
         --data-root /var/lib/docker
         --exec-root /data/exec
-        --host tcp://0.0.0.0:2375
+        --host tcp://0.0.0.0:4243
         --pidfile /data/docker.pid
+    ports:
+      - "4243:4243"
     volumes:
       - dind-storage:/var/lib/docker
 
@@ -33,7 +35,7 @@ services:
       - dind-storage:/var/lib/docker
     environment:
       PASSWORD: $APP_PASSWORD
-      DOCKER_HOST: tcp://docker:2375
+      DOCKER_HOST: tcp://172.17.0.1:4243
     privileged: false
 
 volumes:
