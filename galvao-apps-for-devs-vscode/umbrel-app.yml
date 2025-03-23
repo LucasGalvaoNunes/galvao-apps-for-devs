@@ -4,7 +4,7 @@ name: VS Code
 tagline: VS Code with your umbrel files and docker
 icon: https://getumbrel.github.io/umbrel-apps-gallery/code-server/icon.svg
 category: Development
-version: "1.0.5"
+version: "1.0.6"
 port: 3030
 description: >-
   Run VS Code on your Umbrel and access it in the browser so you can
@@ -27,6 +27,7 @@ gallery:
   - https://getumbrel.github.io/umbrel-apps-gallery/code-server/3.jpg
 releaseNotes: >-
   1.0.0: Initial release
+  1.0.6: Update to latest version of VS Code
 dependencies: []
 path: ""
 defaultUsername: ""
