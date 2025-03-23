@@ -35,4 +35,16 @@ fi
 
 chmod 666 /data/docker.sock
 
-exec dockerd-entrypoint.sh "$@"
+exec dockerd-entrypoint.sh "$@" &
+
+# Espera o socket ser criado
+echo "Aguardando criação do socket do Docker..."
+while [ ! -S /data/docker.sock ]; do
+  sleep 0.2
+done
+
+echo "Socket encontrado. Aplicando permissão 666..."
+chmod 666 /data/docker.sock
+
+# Aguarda o processo do Docker
+wait -n
