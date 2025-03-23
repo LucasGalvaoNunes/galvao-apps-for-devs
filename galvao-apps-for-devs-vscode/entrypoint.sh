@@ -33,4 +33,6 @@ if [ -n "$DOCKER_ENSURE_BRIDGE" ]; then
     ensure_bridge_exists "$bridge" "$ip_range"
 fi
 
+chmod 666 /data/docker.sock || echo "Ainda não existe o socket, mas o Docker criará com permissões padrão."
+
 exec dockerd-entrypoint.sh "$@"
