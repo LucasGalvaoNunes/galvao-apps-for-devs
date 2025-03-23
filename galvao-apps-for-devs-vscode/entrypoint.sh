@@ -33,6 +33,17 @@ if [ -n "$DOCKER_ENSURE_BRIDGE" ]; then
     ensure_bridge_exists "$bridge" "$ip_range"
 fi
 
-chmod 666 /data/docker.sock || echo "Ainda não existe o socket, mas o Docker criará com permissões padrão."
+# Inicia o Docker daemon em segundo plano
+dockerd-entrypoint.sh "$@" &
 
-exec dockerd-entrypoint.sh "$@"
+# Espera o socket ser criado e ajusta permissão
+echo "Aguardando criação do socket do Docker..."
+while [ ! -S /data/docker.sock ]; do
+    sleep 0.2
+done
+
+echo "Socket encontrado. Ajustando permissões..."
+chmod 666 /data/docker.sock
+
+# Aguarda o processo dockerd rodando em foreground
+wait -n
