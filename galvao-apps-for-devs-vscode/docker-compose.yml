@@ -4,6 +4,7 @@ services:
     environment:
       APP_HOST: galvao-apps-for-devs-vscode_server_1
       APP_PORT: 8080
+
   docker:
     image: docker:27.2.0-dind@sha256:f9f72ad901a78f27be922b2d320bbc263174f12919c1b37e6a01f828fa904565
     privileged: true
@@ -21,17 +22,17 @@ services:
         --host unix:///data/docker.sock
         --pidfile /data/docker.pid
     volumes:
-      - ${APP_DATA_DIR}/data/docker/entrypoint.sh:/entrypoint.sh
-      - ${APP_DATA_DIR}/data/docker:/data
+      - ${APP_DATA_DIR}/docker/entrypoint.sh:/entrypoint.sh
+      - ${APP_DATA_DIR}/docker:/data
+
   server:
-    image: codercom/code-server:4.98.2@sha256:9ed588a05d4e81aa464e753a409bc3b2b93267323d1c3975fbddf6f9aef84c26
+    image: ghcr.io/lucasgalvaonunes/vscode-server:latest
     restart: on-failure
     user: "1000:1000"
-    group_add:
-      - "2375"
     volumes:
-      - ${APP_DATA_DIR}/data:/home/coder
-      - ${APP_DATA_DIR}/data/docker/docker.sock:/var/run/docker.sock
+      - ${APP_DATA_DIR}/workspace:/home/coder
+      - ${APP_DATA_DIR}/docker/docker.sock:/var/run/docker.sock
     environment:
       PASSWORD: $APP_PASSWORD
+      DOCKER_HOST: unix:///var/run/docker.sock
     privileged: false
