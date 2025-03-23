@@ -22,7 +22,7 @@ services:
         --host unix:///data/docker.sock
         --pidfile /data/docker.pid
     volumes:
-      - ${APP_DATA_DIR}/docker/entrypoint.sh:/entrypoint.sh
+      - ${APP_DATA_DIR}/entrypoint.sh:/entrypoint.sh
       - ${APP_DATA_DIR}/docker:/data
 
   server:
