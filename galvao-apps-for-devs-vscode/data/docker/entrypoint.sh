@@ -33,7 +33,7 @@ if [ -n "$DOCKER_ENSURE_BRIDGE" ]; then
     ensure_bridge_exists "$bridge" "$ip_range"
 fi
 
-chmod 666 /data/docker.sock
+[ -f /data/docker.pid ] && rm -f /data/docker.pid
 
 exec dockerd-entrypoint.sh "$@" &
 
