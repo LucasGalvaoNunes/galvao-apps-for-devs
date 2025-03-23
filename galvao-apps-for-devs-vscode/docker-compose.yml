@@ -12,6 +12,7 @@ services:
     environment:
       DOCKER_TLS_CERTDIR: ""
       DOCKER_ENSURE_BRIDGE: "dind0:10.32.0.1/16"
+    entrypoint: sh /entrypoint.sh
     command: >
       dockerd
         --bridge dind0
@@ -23,6 +24,8 @@ services:
       - "4243:4243"
     volumes:
       - dind-storage:/var/lib/docker
+      - dind-temp:/data
+      - ${APP_DATA_DIR}/data/docker/entrypoint.sh:/entrypoint.sh
 
   server:
     image: ghcr.io/lucasgalvaonunes/vscode-server:latest
@@ -40,3 +43,4 @@ services:
 
 volumes:
   dind-storage:
+  dind-temp:
