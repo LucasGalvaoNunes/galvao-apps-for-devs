@@ -19,4 +19,5 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       PASSWORD: $APP_PASSWORD
+      APP_ROOT: ${APP_DATA_DIR}/workspace
     privileged: false
