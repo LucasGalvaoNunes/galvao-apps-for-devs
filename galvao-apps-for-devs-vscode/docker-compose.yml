@@ -10,6 +10,8 @@ services:
     image: ghcr.io/lucasgalvaonunes/vscode-server:latest
     restart: on-failure
     user: "1000:1000"
+    ports:
+      - "9003:9003"
     group_add:
       - 994
     volumes:
